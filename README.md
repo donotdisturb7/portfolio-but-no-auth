@@ -2,7 +2,7 @@
 
 [![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?logo=vuedotjs)](https://vuejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-4-646CFF?logo=vite)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
 
 Application de portfolio développée avec Vue.js 3 et Supabase pour le BUT Informatique.
 
@@ -12,11 +12,29 @@ Application de portfolio développée avec Vue.js 3 et Supabase pour le BUT Info
 - Node.js v16+
 - npm 9+
 - Git
+- Compte Supabase
 
 ### Configuration du projet
+
+1. Cloner le dépôt :
 ```bash
 git clone git@github.com:donotdisturb7/portfolio-but-no-auth.git
 cd portfolio-but-no-auth
+```
+
+2. Configuration de l'environnement :
+```bash
+cp .env.example .env
+```
+Remplir les variables dans `.env` avec vos credentials Supabase :
+- VITE_SUPABASE_URL : URL de votre projet Supabase
+- VITE_SUPABASE_KEY : Clé anonime de votre projet
+
+3. Migrations de base de données :
+- Exécuter le fichier `supabase.sql` dans l'éditeur SQL de Supabase
+
+4. Installer les dépendances :
+```bash
 npm install
 ```
 
