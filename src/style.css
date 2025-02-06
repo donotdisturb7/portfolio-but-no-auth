@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Optimisations de performance */
+.nav-item {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+.menu-transition {
+  will-change: opacity, transform;
+}
+
+.profile-menu {
+  will-change: opacity, transform;
+  contain: layout style paint;
+}
+
+/* Réduire les reflows */
+.nav-container {
+  contain: layout style;
+  transform: translateZ(0);
+}
+
+/* Optimiser les animations */
+@media (prefers-reduced-motion: no-preference) {
+  .menu-transition {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Désactiver les animations pour les utilisateurs qui préfèrent les mouvements réduits */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
